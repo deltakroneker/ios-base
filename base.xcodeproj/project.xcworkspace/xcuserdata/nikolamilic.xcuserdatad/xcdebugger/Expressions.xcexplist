@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.leftViewController">
+            </PersistentString>
+            <PersistentString
+               value = "view.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContainerViewController.viewDidLoad():ContainerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.leftViewController">
+            </PersistentString>
+            <PersistentString
+               value = "view.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "self.centerViewController">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.windows.first.subviews">
+            </PersistentString>
+            <PersistentString
+               value = "UIApplication.shared.windows.first">
+            </PersistentString>
+            <PersistentString
+               value = "self.centerNavigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContainerViewController.handlePanGesture(_:):ContainerViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "recognizer.velocity(in: view)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
