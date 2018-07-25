@@ -16,6 +16,7 @@
 		D237740F2105F44900657B96 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D237740E2105F44900657B96 /* ContainerViewController.swift */; };
 		D23774112105F45800657B96 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23774102105F45800657B96 /* CenterViewController.swift */; };
 		D23774132105F46000657B96 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23774122105F46000657B96 /* SideViewController.swift */; };
+		D2D04F5A2108B308003245B4 /* Controls.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2D04F592108B308003245B4 /* Controls.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D237740E2105F44900657B96 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D23774102105F45800657B96 /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		D23774122105F46000657B96 /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
+		D2D04F592108B308003245B4 /* Controls.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Controls.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,7 @@
 		D23773D82105D8B100657B96 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				D23774072105D8EF00657B96 /* Model */,
-				D23774082105D8FB00657B96 /* View */,
-				D23774092105D90000657B96 /* Controller */,
+				D23774092105D90000657B96 /* Custom controls */,
 				D23773D92105D8B100657B96 /* AppDelegate.swift */,
 				D23773DD2105D8B200657B96 /* Main.storyboard */,
 				D23773E02105D8B400657B96 /* Assets.xcassets */,
@@ -131,28 +131,23 @@
 			path = baseUITests;
 			sourceTree = "<group>";
 		};
-		D23774072105D8EF00657B96 /* Model */ = {
+		D23774092105D90000657B96 /* Custom controls */ = {
 			isa = PBXGroup;
 			children = (
+				D2D04F5B2108B32D003245B4 /* SlideOutPanel */,
+				D2D04F592108B308003245B4 /* Controls.plist */,
 			);
-			path = Model;
+			path = "Custom controls";
 			sourceTree = "<group>";
 		};
-		D23774082105D8FB00657B96 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D23774092105D90000657B96 /* Controller */ = {
+		D2D04F5B2108B32D003245B4 /* SlideOutPanel */ = {
 			isa = PBXGroup;
 			children = (
 				D237740E2105F44900657B96 /* ContainerViewController.swift */,
 				D23774102105F45800657B96 /* CenterViewController.swift */,
 				D23774122105F46000657B96 /* SideViewController.swift */,
 			);
-			path = Controller;
+			path = SlideOutPanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D04F5A2108B308003245B4 /* Controls.plist in Resources */,
 				D23773E42105D8B400657B96 /* LaunchScreen.storyboard in Resources */,
 				D23773E12105D8B400657B96 /* Assets.xcassets in Resources */,
 				D23773DF2105D8B200657B96 /* Main.storyboard in Resources */,

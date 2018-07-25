@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let container = ContainerViewController()
+        let center = UIStoryboard.centerViewController()
+        container.centerViewController = center
+        
         window?.rootViewController = container
         window?.makeKeyAndVisible()
         

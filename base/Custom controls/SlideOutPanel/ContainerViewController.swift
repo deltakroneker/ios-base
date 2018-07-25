@@ -21,19 +21,18 @@ enum SlideOutSide {
 class ContainerViewController: UIViewController {
 
     var state: SlideOutState = .closed
-    var side: SlideOutSide = .left
-    let centerPanelExpandedOffset: CGFloat = 60
-    let expandPointRatio: CGFloat = 0.5
+    var side: SlideOutSide = .right
+    let centerPanelExpandedOffset: CGFloat = 100
+    let expandPointRatio: CGFloat = 0.3
     let sufficientVelocityForStateChange: CGFloat = 1000
     
-    var sideViewController: SideViewController!
+    var sideViewController: UIViewController!
     var centerNavigationController: UINavigationController!
     var centerViewController: CenterViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        centerViewController = UIStoryboard.centerViewController()
         centerViewController.delegate = self
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
@@ -114,12 +113,21 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
                 let translation = recognizer.translation(in: view)
                 
                 let startedMovingToLeft = (translation.x < 0)
-                let isNotFurtherLeftThanScreenCenter = ((movingXCenter + translation.x) <= horizontalCenter)
                 let startedMovingToRight = (translation.x > 0)
-                let isNotFurtherRightThanOffset = (movingXOrigin + translation.x) >= (view.bounds.size.width - self.centerPanelExpandedOffset)
-                                
+                var isInLeftmostPosition: Bool
+                var isInRightmostPosition: Bool
+                
+                switch side {
+                    case .left:
+                        isInLeftmostPosition = (movingXCenter + translation.x) <= horizontalCenter
+                        isInRightmostPosition = (movingXOrigin + translation.x) >= (view.bounds.size.width - self.centerPanelExpandedOffset)
+                    case .right:
+                        isInRightmostPosition = (movingXCenter + translation.x) >= horizontalCenter
+                        isInLeftmostPosition = (movingXOrigin + translation.x) <= -(view.bounds.size.width - self.centerPanelExpandedOffset)
+                }
+                
                 if let movingView = self.centerNavigationController.view {
-                    if (isNotFurtherLeftThanScreenCenter && startedMovingToLeft) || (isNotFurtherRightThanOffset && startedMovingToRight) {
+                    if (isInLeftmostPosition && startedMovingToLeft) || (isInRightmostPosition && startedMovingToRight) {
                         break
                     } else {
                         movingView.center.x = movingView.center.x + translation.x
@@ -129,11 +137,22 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
             
             case .ended:
                 if let _ = sideViewController, let movingView = self.centerNavigationController.view {
-                    let hasMovedBeyondExpandingPoint = movingView.center.x > ((self.expandPointRatio + 1/2) * view.bounds.size.width)
-                    let hasSufficientVelocityForStateChange = abs(recognizer.velocity(in: view).x) > self.sufficientVelocityForStateChange
-                    let isDirectedInProperDirection = (self.state == .closed) ? recognizer.velocity(in: view).x > 0 : recognizer.velocity(in: view).x < 0
+                    let hasMovedBeyondExpandingPoint: Bool
+                    let hasSufficientVelocityForStateChange: Bool
+                    let isDirectedInProperDirection: Bool
                     
-                    switch self.state {
+                    switch side {
+                        case .left:
+                            hasMovedBeyondExpandingPoint = movingView.center.x > ((self.expandPointRatio + 1/2) * view.bounds.size.width)
+                            hasSufficientVelocityForStateChange = abs(recognizer.velocity(in: view).x) > self.sufficientVelocityForStateChange
+                            isDirectedInProperDirection = (self.state == .closed) ? recognizer.velocity(in: view).x > 0 : recognizer.velocity(in: view).x < 0
+                        case .right:
+                            hasMovedBeyondExpandingPoint = movingView.center.x < (self.expandPointRatio  * view.bounds.size.width)
+                            hasSufficientVelocityForStateChange = abs(recognizer.velocity(in: view).x) > self.sufficientVelocityForStateChange
+                            isDirectedInProperDirection = (self.state == .closed) ? recognizer.velocity(in: view).x < 0 : recognizer.velocity(in: view).x > 0
+                    }
+                    
+                    switch state {
                         case .closed:
                             animateSidePanel(shouldExpand: (hasMovedBeyondExpandingPoint || hasSufficientVelocityForStateChange) && isDirectedInProperDirection)
                         case .expanded:
@@ -148,7 +167,7 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
     
 }
 
-private extension UIStoryboard {
+extension UIStoryboard {
     
     static func mainStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
