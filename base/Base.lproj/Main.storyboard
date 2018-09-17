@@ -36,7 +36,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojq-oM-5n7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1806" y="0.0"/>
+            <point key="canvasLocation" x="-1719" y="34"/>
         </scene>
         <!--Side View Controller-->
         <scene sceneID="JaW-a2-nSs">
@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96a-5h-Al0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-966" y="0.0"/>
+            <point key="canvasLocation" x="-892" y="34"/>
         </scene>
         <!--Center View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -70,9 +70,27 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPD-OW-0Sc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3M-db-iZp">
+                                <rect key="frame" x="133" y="480" width="108" height="48"/>
+                                <color key="backgroundColor" red="0.23340998669999999" green="0.80265990639999996" blue="0.93772263600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="C8u-8o-6Zd"/>
+                                    <constraint firstAttribute="width" constant="108" id="FhB-LG-YrP"/>
+                                </constraints>
+                                <state key="normal" title="show alert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlertPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GhK-Zh-ZFu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="q3M-db-iZp" secondAttribute="bottom" constant="139" id="mbj-jD-aDC"/>
+                            <constraint firstItem="q3M-db-iZp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="n5V-t1-kd5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

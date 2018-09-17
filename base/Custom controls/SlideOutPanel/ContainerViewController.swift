@@ -91,8 +91,9 @@ extension ContainerViewController: CenterViewControllerDelegate {
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 0,
-                       options: .curveEaseInOut, animations: {
-                        self.centerNavigationController.view.frame.origin.x = targetPosition
+                       options: .curveEaseInOut,
+                       animations: {
+                            self.centerNavigationController.view.frame.origin.x = targetPosition
         }, completion: completion)
     }
     

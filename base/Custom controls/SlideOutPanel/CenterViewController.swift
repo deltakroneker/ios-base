@@ -12,7 +12,7 @@ protocol CenterViewControllerDelegate {
     func toggleLeftPanel()
 }
 
-class CenterViewController: UIViewController {
+class CenterViewController: UIViewController, AlertShowing {
 
     var delegate: CenterViewControllerDelegate?
     
@@ -23,5 +23,9 @@ class CenterViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: Any) {
         delegate?.toggleLeftPanel()
     }
+    
+    @IBAction func showAlertPressed(_ sender: UIButton) {
+    }
+    
 }
 
