@@ -1,5 +1,5 @@
 //
-//  Alert.swift
+//  AlertShowingProtocol.swift
 //  base
 //
 //  Created by Nikola Milic on 9/17/18.
@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 protocol AlertShowing {
-    
     func showBasicAlert(on vc: UIViewController, title: String, message: String)
-    
     func showIncompleteFormAlert(on vc: UIViewController)
     func showInvalidEmailAlert(on vc: UIViewController)
     func showUnableToRetrieveDataAlert(on vc: UIViewController)

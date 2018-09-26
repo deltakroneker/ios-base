@@ -12,20 +12,13 @@ protocol CenterViewControllerDelegate {
     func toggleLeftPanel()
 }
 
-class CenterViewController: UIViewController, AlertShowing {
+class CenterViewController: BaseViewController {
 
     var delegate: CenterViewControllerDelegate?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func buttonPressed(_ sender: Any) {
-        delegate?.toggleLeftPanel()
-    }
-    
-    @IBAction func showAlertPressed(_ sender: UIButton) {
-    }
-    
+     
 }
 
