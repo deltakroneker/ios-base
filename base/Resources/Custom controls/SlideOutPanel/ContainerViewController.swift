@@ -33,12 +33,13 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        centerViewController = UIStoryboard.centerViewController()
         centerViewController.delegate = self
         
         centerNavigationController = UINavigationController(rootViewController: centerViewController)
         view.addSubview(centerNavigationController.view)
-        addChildViewController(centerNavigationController)
-        centerNavigationController.didMove(toParentViewController: self)
+        addChild(centerNavigationController)
+        centerNavigationController.didMove(toParent: self)
                 
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         view.addGestureRecognizer(gesture)
@@ -60,7 +61,7 @@ extension ContainerViewController: CenterViewControllerDelegate {
         
         if let vc = UIStoryboard.sideViewController() {
             sideViewController = vc
-            addChildViewController(vc)
+            addChild(vc)
             view.insertSubview(vc.view, at: 0)
         }
     }
@@ -168,18 +169,4 @@ extension ContainerViewController: UIGestureRecognizerDelegate {
     
 }
 
-extension UIStoryboard {
-    
-    static func mainStoryboard() -> UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-    }
-    
-    static func sideViewController() -> SideViewController? {
-        return mainStoryboard().instantiateViewController(withIdentifier: "SideViewController") as? SideViewController
-    }
-    
-    static func centerViewController() -> CenterViewController? {
-        return mainStoryboard().instantiateViewController(withIdentifier: "CenterViewController") as? CenterViewController
-    }
-}
+

@@ -13,6 +13,7 @@
 		D23773FA2105D8B400657B96 /* baseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23773F92105D8B400657B96 /* baseUITests.swift */; };
 		D237740F2105F44900657B96 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D237740E2105F44900657B96 /* ContainerViewController.swift */; };
 		D23774112105F45800657B96 /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23774102105F45800657B96 /* CenterViewController.swift */; };
+		D25879F2215BCB7100253E75 /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25879F1215BCB7100253E75 /* UIStoryboardExtensions.swift */; };
 		D2C5A973214FE699005FF866 /* AlertShowingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5A972214FE699005FF866 /* AlertShowingProtocol.swift */; };
 		D2D5F184215BC3CA001A7AF5 /* SlideOutPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D5F183215BC3CA001A7AF5 /* SlideOutPanel.storyboard */; };
 		D2D6A4EB2150FA300065C653 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D6A4EA2150FA300065C653 /* Style.swift */; };
@@ -51,6 +52,7 @@
 		D23773FB2105D8B400657B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D237740E2105F44900657B96 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D23774102105F45800657B96 /* CenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
+		D25879F1215BCB7100253E75 /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		D2C5A972214FE699005FF866 /* AlertShowingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowingProtocol.swift; sourceTree = "<group>"; };
 		D2D5F183215BC3CA001A7AF5 /* SlideOutPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideOutPanel.storyboard; sourceTree = "<group>"; };
 		D2D6A4EA2150FA300065C653 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		D2D5F182215BC0E7001A7AF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D25879F1215BCB7100253E75 /* UIStoryboardExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,13 +275,16 @@
 				TargetAttributes = {
 					D23773D52105D8B100657B96 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					D23773E92105D8B400657B96 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = D23773D52105D8B100657B96;
 					};
 					D23773F42105D8B400657B96 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = D23773D52105D8B100657B96;
 					};
 				};
@@ -337,6 +343,7 @@
 				D23774112105F45800657B96 /* CenterViewController.swift in Sources */,
 				D2D6A4EB2150FA300065C653 /* Style.swift in Sources */,
 				D2D6A4ED2150FB6D0065C653 /* Style+Base.swift in Sources */,
+				D25879F2215BCB7100253E75 /* UIStoryboardExtensions.swift in Sources */,
 				D237740F2105F44900657B96 /* ContainerViewController.swift in Sources */,
 				D23773DA2105D8B100657B96 /* AppDelegate.swift in Sources */,
 				D2D6A4EF215113B20065C653 /* BaseViewController.swift in Sources */,
@@ -504,7 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.base;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -522,7 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.base;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -542,7 +549,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.baseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/base.app/base";
 			};
@@ -563,7 +570,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.baseTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/base.app/base";
 			};
@@ -583,7 +590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.baseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = base;
 			};
@@ -603,7 +610,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolamilic.baseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = base;
 			};

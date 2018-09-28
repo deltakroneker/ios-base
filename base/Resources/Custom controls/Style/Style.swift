@@ -78,8 +78,8 @@ class Style {
     func apply(textStyle: TextStyle = .navigationBar, to navigationBar: UINavigationBar) {
         let attributes = attributesForStyle(textStyle)
         navigationBar.titleTextAttributes = [
-            NSAttributedStringKey(NSAttributedStringKey.font.rawValue) : attributes.font,
-            NSAttributedStringKey(NSAttributedStringKey.foregroundColor.rawValue) : attributes.color
+            NSAttributedString.Key(NSAttributedString.Key.font.rawValue) : attributes.font,
+            NSAttributedString.Key(NSAttributedString.Key.foregroundColor.rawValue) : attributes.color
         ]
         
         if let color = attributes.backgroundColor {

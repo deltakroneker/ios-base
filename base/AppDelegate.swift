@@ -13,18 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-  
-//        Add for slide out menu
         
-//        let container = ContainerViewController()
-//        let center = UIStoryboard.centerViewController()
-//        container.centerViewController = center
-//
-//        window?.rootViewController = container
-//        window?.makeKeyAndVisible()
-
+//      Slide out menu
+        let container = ContainerViewController()
+        let center = UIStoryboard.centerViewController()
+        container.centerViewController = center
+        window?.rootViewController = container
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
